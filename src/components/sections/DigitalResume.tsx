@@ -1,7 +1,11 @@
 import { useMemo, useState } from 'react'
 import { experiences } from '../../data/profile'
 
-export function DigitalResume() {
+type DigitalResumeProps = {
+  isDark: boolean
+}
+
+export function DigitalResume({ isDark }: DigitalResumeProps) {
   const [activeExperienceId, setActiveExperienceId] = useState(experiences[0]?.id ?? '')
 
   const activeExperience = useMemo(
@@ -14,7 +18,12 @@ export function DigitalResume() {
   }
 
   return (
-    <section id="digital-resume" className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-10">
+    <section
+      id="digital-resume"
+      className={`rounded-3xl border p-6 md:p-10 ${
+        isDark ? 'border-white/10 bg-slate-900/70' : 'border-slate-200 bg-white'
+      }`}
+    >
       <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div>
           <h2 className="section-title">Digital Resume</h2>
@@ -33,7 +42,11 @@ export function DigitalResume() {
       </div>
 
       <div className="mt-6 grid gap-4 lg:grid-cols-[320px_1fr]">
-        <aside className="rounded-2xl border border-white/10 bg-slate-950/50 p-3">
+        <aside
+          className={`rounded-2xl border p-3 ${
+            isDark ? 'border-white/10 bg-slate-950/50' : 'border-slate-200 bg-slate-50'
+          }`}
+        >
           <div className="flex flex-col gap-2">
             {experiences.map((experience) => (
               <button
@@ -42,8 +55,12 @@ export function DigitalResume() {
                 onClick={() => setActiveExperienceId(experience.id)}
                 className={`rounded-xl border px-3 py-3 text-left transition ${
                   activeExperience.id === experience.id
-                    ? 'border-cyan-300/60 bg-cyan-500/10 text-cyan-100'
-                    : 'border-white/10 bg-slate-900/70 text-slate-300 hover:border-cyan-300/40 hover:text-white'
+                    ? isDark
+                      ? 'border-cyan-300/60 bg-cyan-500/10 text-cyan-100'
+                      : 'border-cyan-700/45 bg-cyan-50 text-cyan-900'
+                    : isDark
+                      ? 'border-white/10 bg-slate-900/70 text-slate-300 hover:border-cyan-300/40 hover:text-white'
+                      : 'border-slate-200 bg-white text-slate-700 hover:border-cyan-700/40 hover:text-slate-900'
                 }`}
               >
                 <p className="text-sm font-semibold">{experience.company}</p>
@@ -54,24 +71,28 @@ export function DigitalResume() {
           </div>
         </aside>
 
-        <article className="rounded-2xl border border-white/10 bg-slate-950/50 p-5">
+        <article
+          className={`rounded-2xl border p-5 ${
+            isDark ? 'border-white/10 bg-slate-950/50' : 'border-slate-200 bg-slate-50'
+          }`}
+        >
           <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
             <div>
-              <h3 className="text-2xl font-semibold text-white">{activeExperience.company}</h3>
-              <p className="text-slate-300">{activeExperience.role}</p>
+              <h3 className={`text-2xl font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{activeExperience.company}</h3>
+              <p className={isDark ? 'text-slate-300' : 'text-slate-700'}>{activeExperience.role}</p>
             </div>
-            <div className="text-sm text-slate-400 md:text-right">
+            <div className={`text-sm md:text-right ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
               <p>{activeExperience.period}</p>
               <p>{activeExperience.location}</p>
             </div>
           </div>
 
           <div className="mt-5">
-            <h4 className="text-sm font-semibold tracking-wide text-cyan-200">Highlights</h4>
-            <ul className="mt-2 grid gap-2 text-sm text-slate-200">
+            <h4 className={`text-sm font-semibold tracking-wide ${isDark ? 'text-cyan-200' : 'text-cyan-800'}`}>Highlights</h4>
+            <ul className={`mt-2 grid gap-2 text-sm ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
               {activeExperience.highlights.map((bullet) => (
                 <li key={bullet} className="flex gap-2">
-                  <span className="text-cyan-300">•</span>
+                  <span className={isDark ? 'text-cyan-300' : 'text-cyan-700'}>•</span>
                   <span>{bullet}</span>
                 </li>
               ))}
@@ -80,7 +101,12 @@ export function DigitalResume() {
 
           <div className="mt-5 flex flex-wrap gap-2">
             {activeExperience.stack.map((stack) => (
-              <span key={stack} className="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-300">
+              <span
+                key={stack}
+                className={`rounded-full px-3 py-1 text-xs ${
+                  isDark ? 'bg-white/5 text-slate-300' : 'bg-slate-200 text-slate-700'
+                }`}
+              >
                 {stack}
               </span>
             ))}
