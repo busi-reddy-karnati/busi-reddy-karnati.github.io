@@ -67,25 +67,11 @@ export function DigitalResume() {
           </div>
 
           <div className="mt-5">
-            <h4 className="text-sm font-semibold tracking-wide text-cyan-200">Final Highlights</h4>
+            <h4 className="text-sm font-semibold tracking-wide text-cyan-200">Highlights</h4>
             <ul className="mt-2 grid gap-2 text-sm text-slate-200">
-              {activeExperience.finalBullets.map((bullet) => (
+              {activeExperience.highlights.map((bullet) => (
                 <li key={bullet} className="flex gap-2">
                   <span className="text-cyan-300">•</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-5 rounded-xl border border-amber-300/20 bg-amber-500/5 p-4">
-            <h4 className="text-sm font-semibold tracking-wide text-amber-200">
-              Draft - Customize These Before Interviews
-            </h4>
-            <ul className="mt-2 grid gap-2 text-sm text-amber-100/90">
-              {activeExperience.draftBullets.map((bullet) => (
-                <li key={bullet} className="flex gap-2">
-                  <span className="text-amber-300">•</span>
                   <span>{bullet}</span>
                 </li>
               ))}

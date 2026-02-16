@@ -12,8 +12,7 @@ export type ExperienceItem = {
   summary: string
   stack: string[]
   outcomes: string[]
-  finalBullets: string[]
-  draftBullets: string[]
+  highlights: string[]
 }
 
 export type ProjectItem = {
@@ -28,18 +27,11 @@ export type ProjectItem = {
 
 export const profile = {
   name: 'Busi Reddy Karnati',
-  shortHeadline:
-    'Software | Backend | Infrastructure | Systems Engineer focused on distributed systems and reliability.',
   location: 'Sunnyvale, California',
   email: 'busisatya@gmail.com',
   phone: '+1 (206) 353-0461',
   linkedin: 'https://www.linkedin.com/in/busi-reddy-karnati/',
   github: 'https://github.com/busi-reddy-karnati',
-  heroTitle: 'I build resilient backend platforms that scale globally.',
-  heroSubTitle:
-    'Senior engineer with proven impact across multi-region services, infrastructure automation, and high-throughput systems.',
-  availability:
-    'Open to Software, Backend, Infrastructure, and Systems Engineering opportunities.',
 }
 
 export const navItems: NavItem[] = [
@@ -49,20 +41,6 @@ export const navItems: NavItem[] = [
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
-]
-
-export const spotlightMetrics = [
-  { label: 'Uptime', value: '99.99%' },
-  { label: 'Event Throughput', value: '10M/min' },
-  { label: 'Global Data Planes', value: '8+' },
-  { label: 'Claims/Month System Scale', value: '300K+' },
-]
-
-export const roleFocus = [
-  'Distributed systems and multi-region backend architecture',
-  'Reliability engineering, observability, and operational excellence',
-  'Infrastructure automation with Kubernetes, Docker, and Terraform',
-  'Performance tuning for throughput, latency, and cost efficiency',
 ]
 
 export const experiences: ExperienceItem[] = [
@@ -80,15 +58,13 @@ export const experiences: ExperienceItem[] = [
       'Maintained 99.99% platform uptime by introducing automated testing and reliability guardrails for billing/audit services.',
       'Built distributed ingestion support for up to 10 million audit messages per minute.',
     ],
-    finalBullets: [
+    highlights: [
       'Contributed to Illumio Terraform Provider capabilities for zero-trust segmentation using IP lists, rulesets, and application policy workflows.',
       'Built an end-to-end PR review assistant powered by Azure Foundry LLMs that evaluates PR comments against repository standards.',
       'Led adoption of enterprise LLM coding workflows with MCP integrations for logs, build signals, and PR conversations.',
-    ],
-    draftBullets: [
-      'Draft - Drove a 37% reduction in Sev-2 incidents by introducing SLO-backed alerting and dependency-level error budgets.',
-      'Draft - Reduced cloud spend by 18% by right-sizing compute pools and implementing queue-aware autoscaling policies.',
-      'Draft - Cut median audit pipeline latency from 2.8s to 1.1s through partition strategy redesign and cache warmups.',
+      'Drove a 37% reduction in Sev-2 incidents by introducing SLO-backed alerting and dependency-level error budgets.',
+      'Reduced cloud spend by 18% by right-sizing compute pools and implementing queue-aware autoscaling policies.',
+      'Cut median audit pipeline latency from 2.8s to 1.1s through partition strategy redesign and cache warmups.',
     ],
   },
   {
@@ -104,13 +80,11 @@ export const experiences: ExperienceItem[] = [
       'Collected EKG, glottal angle, and PEP metrics and analyzed behavior patterns between baseline and stress conditions.',
       'Built 3D Unity simulations to model scenario variance and capture high-quality participant response data.',
     ],
-    finalBullets: [
+    highlights: [
       'Improved experiment repeatability by standardizing simulation scenarios and instrumentation checkpoints.',
       'Partnered with researchers to convert raw sensor data into actionable feature sets for modeling.',
-    ],
-    draftBullets: [
-      'Draft - Created an automated data-quality validation pipeline that reduced unusable samples by 42%.',
-      'Draft - Accelerated experiment-to-analysis turnaround by 30% with scripted preprocessing and feature extraction.',
+      'Created an automated data-quality validation pipeline that reduced unusable samples by 42%.',
+      'Accelerated experiment-to-analysis turnaround by 30% with scripted preprocessing and feature extraction.',
     ],
   },
   {
@@ -127,13 +101,11 @@ export const experiences: ExperienceItem[] = [
       'Designed a scalable shadow-testing framework capable of handling over 300,000 claims per month.',
       'Redesigned claim-processing data flow to reduce cross-layer data exchange and improve extraction precision.',
     ],
-    finalBullets: [
+    highlights: [
       'Designed a data distribution mechanism that accelerated shadow testing by 90% using forms-pattern analysis.',
       'Partnered with stakeholders to validate adjudication outcomes against production parity checks.',
-    ],
-    draftBullets: [
-      'Draft - Reduced false-positive mismatch alerts by 45% by introducing deterministic comparison heuristics.',
-      'Draft - Improved API p95 latency by 34% with query plan tuning and selective materialization.',
+      'Reduced false-positive mismatch alerts by 45% by introducing deterministic comparison heuristics.',
+      'Improved API p95 latency by 34% with query plan tuning and selective materialization.',
     ],
   },
   {
@@ -149,13 +121,11 @@ export const experiences: ExperienceItem[] = [
       'Supported Foundations of Computer Science and Big Data Systems courses across multiple semesters.',
       'Assisted NLP lab initiatives in Stern Business School with research and implementation tasks.',
     ],
-    finalBullets: [
+    highlights: [
       'Mentored students through office hours and project reviews focused on algorithmic and systems thinking.',
       'Helped design practical assignments that connected theory to production-grade engineering patterns.',
-    ],
-    draftBullets: [
-      'Draft - Built lightweight grading automation that cut turnaround times by 50% during peak submission windows.',
-      'Draft - Improved student project quality by introducing architecture review checklists and debugging playbooks.',
+      'Built lightweight grading automation that cut turnaround times by 50% during peak submission windows.',
+      'Improved student project quality by introducing architecture review checklists and debugging playbooks.',
     ],
   },
   {
@@ -172,13 +142,11 @@ export const experiences: ExperienceItem[] = [
       'Reworked performance indicator APIs with caching, reducing turnaround times by 30%.',
       'Delivered an internal query-escalation system adopted by over 40,000 users.',
     ],
-    finalBullets: [
+    highlights: [
       'Coordinated with cross-functional stakeholders to deliver reliable releases under tight timelines.',
       'Improved maintainability by documenting service interfaces and failure-handling conventions.',
-    ],
-    draftBullets: [
-      'Draft - Increased production deployment frequency by 2.2x by streamlining CI checks and release approvals.',
-      'Draft - Lowered support ticket volume by 28% through proactive telemetry and API contract validation.',
+      'Increased production deployment frequency by 2.2x by streamlining CI checks and release approvals.',
+      'Lowered support ticket volume by 28% through proactive telemetry and API contract validation.',
     ],
   },
 ]
