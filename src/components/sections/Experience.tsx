@@ -14,7 +14,7 @@ export function Experience({ isDark }: ExperienceProps) {
     >
       <h2 className="section-title">Professional Experience</h2>
       <p className="section-subtitle">
-        Highlights designed for quick recruiter scan: role scope, stack fit, and measurable impact.
+        Highlights covering role scope, stack fit, and measurable impact.
       </p>
       <div className="mt-6 grid gap-4">
         {experiences.map((experience) => (

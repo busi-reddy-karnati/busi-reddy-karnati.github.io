@@ -14,7 +14,7 @@ export function Projects({ isDark }: ProjectsProps) {
     >
       <h2 className="section-title">Selected Projects & Case Studies</h2>
       <p className="section-subtitle">
-        These case studies are positioned for backend, systems, and infrastructure recruiter conversations.
+        These case studies are positioned for backend, systems, and infrastructure conversations.
       </p>
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         {projects.map((project) => (

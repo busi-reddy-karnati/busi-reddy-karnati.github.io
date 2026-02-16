@@ -1,6 +1,6 @@
 # Busi Reddy Karnati - Personal Website
 
-Recruiter-focused personal website for Software, Backend, Infrastructure, and Systems Engineering opportunities.
+Personal website for Software, Backend, Infrastructure, and Systems Engineering opportunities.
 
 ## Tech Stack
 

@@ -67,7 +67,7 @@ export function Contact({ isDark }: ContactProps) {
             isDark ? 'border-cyan-300/20 bg-cyan-500/5' : 'border-cyan-200 bg-cyan-50'
           }`}
         >
-          <h3 className={`text-lg font-semibold ${isDark ? 'text-cyan-100' : 'text-cyan-800'}`}>Recruiter Quick Pitch</h3>
+          <h3 className={`text-lg font-semibold ${isDark ? 'text-cyan-100' : 'text-cyan-800'}`}>Quick Pitch</h3>
           <p className={`mt-3 text-sm ${isDark ? 'text-cyan-50/90' : 'text-cyan-900/90'}`}>
             Engineer with experience building distributed backend systems, infrastructure automation, and
             reliability-first platforms across high-throughput workloads. Strong ownership mindset with
