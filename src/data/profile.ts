@@ -23,6 +23,7 @@ export type ProjectItem = {
   impact: string
   stack: string[]
   github: string
+  appStore?: string
 }
 
 export const profile = {
@@ -152,6 +153,19 @@ export const experiences: ExperienceItem[] = [
 ]
 
 export const projects: ProjectItem[] = [
+  {
+    title: 'SpotRep',
+    roleTag: 'iOS & Full-Stack',
+    summary:
+      'A voice-first iOS fitness app: speak a set ("bench press, 3 sets of 8 at 135") and an LLM logs it as structured data, then ask an AI coach questions grounded in your own workout history.',
+    architecture:
+      'SwiftUI + HealthKit client backed by a FastAPI/PostgreSQL service (async SQLAlchemy, Alembic), with Google Gemini 2.5 Flash parsing voice transcripts and powering the assistant; deployed on AWS (EC2 + RDS) with GitHub Actions CI/CD auto-publishing to TestFlight via fastlane.',
+    impact:
+      'Hands-free logging, cardio/strength progress analytics, Apple Health sync, Sign in with Apple, CSV import, and spotter sharing for accountability — designed and built solo across the app, API, AI, and pipeline.',
+    stack: ['Swift', 'SwiftUI', 'FastAPI', 'PostgreSQL', 'Google Gemini', 'AWS'],
+    github: 'https://github.com/busi-reddy-karnati/Fitnesswispr',
+    appStore: '{{APP_STORE_LINK}}',
+  },
   {
     title: 'claude-manager',
     roleTag: 'Developer Tools',

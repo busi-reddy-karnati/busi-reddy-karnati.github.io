@@ -53,16 +53,30 @@ export function Projects({ isDark }: ProjectsProps) {
                 </span>
               ))}
             </div>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className={`mt-4 inline-flex text-sm transition ${
-                isDark ? 'text-cyan-200 hover:text-cyan-100' : 'text-cyan-700 hover:text-cyan-900'
-              }`}
-            >
-              View on GitHub {'->'}
-            </a>
+            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className={`inline-flex text-sm transition ${
+                  isDark ? 'text-cyan-200 hover:text-cyan-100' : 'text-cyan-700 hover:text-cyan-900'
+                }`}
+              >
+                View on GitHub {'->'}
+              </a>
+              {project.appStore && (
+                <a
+                  href={project.appStore}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`inline-flex text-sm transition ${
+                    isDark ? 'text-cyan-200 hover:text-cyan-100' : 'text-cyan-700 hover:text-cyan-900'
+                  }`}
+                >
+                  App Store {'->'}
+                </a>
+              )}
+            </div>
           </article>
         ))}
       </div>
