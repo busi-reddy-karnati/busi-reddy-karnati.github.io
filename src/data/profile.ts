@@ -153,6 +153,18 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
+    title: 'claude-manager',
+    roleTag: 'Developer Tools',
+    summary:
+      'A single-screen terminal dashboard that brings your Claude Code sessions, memory (CLAUDE.md files), and timestamps into one view — and lets you resume any session in your default terminal.',
+    architecture:
+      'Pure-Python CLI with a numbered, paginated interactive console plus a static overview dashboard; zero dependencies (Python standard library only).',
+    impact:
+      'A one-line install unifies session, memory, and timestamp context so you can jump back into any Claude Code session instantly.',
+    stack: ['Python', 'CLI', 'Terminal', 'Developer Tools'],
+    github: 'https://github.com/busi-reddy-karnati/claude-manager',
+  },
+  {
     title: 'Global Audit Ingestion Fabric',
     roleTag: 'Infrastructure Engineering',
     summary:
