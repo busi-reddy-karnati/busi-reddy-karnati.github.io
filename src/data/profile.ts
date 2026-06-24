@@ -63,11 +63,7 @@ export const experiences: ExperienceItem[] = [
     ],
     highlights: [
       'Contributed to Illumio Terraform Provider capabilities for zero-trust segmentation using IP lists, rulesets, and application policy workflows.',
-      'Built an end-to-end PR review assistant powered by Azure Foundry LLMs that evaluates PR comments against repository standards.',
       'Led adoption of enterprise LLM coding workflows with MCP integrations for logs, build signals, and PR conversations.',
-      'Drove a 37% reduction in Sev-2 incidents by introducing SLO-backed alerting and dependency-level error budgets.',
-      'Reduced cloud spend by 18% by right-sizing compute pools and implementing queue-aware autoscaling policies.',
-      'Cut median audit pipeline latency from 2.8s to 1.1s through partition strategy redesign and cache warmups.',
     ],
   },
   {
