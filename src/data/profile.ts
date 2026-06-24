@@ -217,7 +217,7 @@ export const projects: ProjectItem[] = [
 export const skillGroups = [
   {
     title: 'Languages',
-    items: ['Golang', 'Python', 'TypeScript', 'SQL'],
+    items: ['Golang', 'Python', 'Java', 'TypeScript', 'SQL'],
   },
   {
     title: 'Backend & Data',
