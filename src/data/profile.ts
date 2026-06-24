@@ -52,12 +52,14 @@ export const experiences: ExperienceItem[] = [
     period: 'Feb 2024 - Present',
     location: 'Sunnyvale, California',
     summary:
-      'Own backend services and infra workflows powering usage, billing, reporting, and audit pipelines across global data planes.',
-    stack: ['Golang', 'Kubernetes', 'Kafka', 'Redis', 'Terraform', 'Azure OpenAI'],
+      'Own backend services and infra workflows powering usage, billing, reporting, and audit pipelines.',
+    stack: ['Golang', 'Kubernetes', 'Kafka', 'Redis', 'Terraform', 'PostgreSQL'],
     outcomes: [
       'Designed and shipped microservices for usage, billing, audit, and reporting fed by 12 data planes in 8 regions.',
       'Maintained 99.99% platform uptime by introducing automated testing and reliability guardrails for billing/audit services.',
       'Built distributed ingestion support for up to 10 million audit messages per minute.',
+      'Drove Terraform development to extend infrastructure-as-code workflows for zero-trust segmentation.',
+      'Built workflows to propagate onboarding errors to the right surfaces, helping customers resolve setup issues faster.',
     ],
     highlights: [
       'Contributed to Illumio Terraform Provider capabilities for zero-trust segmentation using IP lists, rulesets, and application policy workflows.',
@@ -76,7 +78,7 @@ export const experiences: ExperienceItem[] = [
     location: 'Pittsburgh, Pennsylvania',
     summary:
       'Built simulation and data-collection workflows for stress-response research using physiological and voice signal features.',
-    stack: ['Python', 'Unity', 'Signal Processing', 'Data Analysis'],
+    stack: ['Python', 'Unity', 'Data Analysis'],
     outcomes: [
       'Collected EKG, glottal angle, and PEP metrics and analyzed behavior patterns between baseline and stress conditions.',
       'Built 3D Unity simulations to model scenario variance and capture high-quality participant response data.',
@@ -137,7 +139,7 @@ export const experiences: ExperienceItem[] = [
     location: 'Mumbai, India',
     summary:
       'Delivered frontend and backend improvements for public-sector and enterprise systems with high user volume.',
-    stack: ['Node.js', 'React', 'AWS', 'Caching', 'API Design'],
+    stack: ['Java', 'Node.js', 'React', 'AWS', 'Caching', 'API Design'],
     outcomes: [
       'Redesigned the MoSPI website with React to improve responsiveness and reduce latency by 20%.',
       'Reworked performance indicator APIs with caching, reducing turnaround times by 30%.',
