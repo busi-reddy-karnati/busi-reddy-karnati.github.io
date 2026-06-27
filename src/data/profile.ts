@@ -162,7 +162,7 @@ export const projects: ProjectItem[] = [
       'Hands-free logging, cardio/strength progress analytics, Apple Health sync, Sign in with Apple, CSV import, and spotter sharing for accountability — designed and built solo across the app, API, AI, and pipeline.',
     stack: ['Swift', 'SwiftUI', 'FastAPI', 'PostgreSQL', 'Google Gemini', 'AWS'],
     github: 'https://github.com/busi-reddy-karnati/Fitnesswispr',
-    appStore: '{{APP_STORE_LINK}}',
+    appStore: 'https://apps.apple.com/us/app/spotrep/id6780619146',
   },
   {
     title: 'claude-manager',
