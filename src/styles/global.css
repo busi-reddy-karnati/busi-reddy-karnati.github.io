@@ -86,3 +86,7 @@ a {
   border-color: rgba(148, 163, 184, 0.7);
   color: #f1f5f9;
 }
+
+.modal-open {
+  overflow: hidden;
+}
