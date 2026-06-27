@@ -1,23 +1,53 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { projects, type ProjectItem } from '../../data/profile'
 
 type ProjectsProps = {
   isDark: boolean
 }
 
+const FOCUSABLE_SELECTORS = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+
 export function Projects({ isDark }: ProjectsProps) {
   const [active, setActive] = useState<ProjectItem | null>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const modalRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     if (!active) return
+
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setActive(null)
+      if (event.key === 'Escape') {
+        setActive(null)
+        return
+      }
+      if (event.key === 'Tab' && modalRef.current) {
+        const focusable = Array.from(modalRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTORS))
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (event.shiftKey) {
+          if (document.activeElement === first) {
+            event.preventDefault()
+            last?.focus()
+          }
+        } else {
+          if (document.activeElement === last) {
+            event.preventDefault()
+            first?.focus()
+          }
+        }
+      }
     }
+
     window.addEventListener('keydown', onKey)
-    document.body.style.overflow = 'hidden'
+    document.body.classList.add('modal-open')
+    const focusTimer = setTimeout(() => closeButtonRef.current?.focus(), 0)
     return () => {
+      clearTimeout(focusTimer)
       window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
+      document.body.classList.remove('modal-open')
+      triggerRef.current?.focus()
+      triggerRef.current = null
     }
   }, [active])
 
@@ -37,8 +67,11 @@ export function Projects({ isDark }: ProjectsProps) {
           <button
             key={project.title}
             type="button"
-            onClick={() => setActive(project)}
-            className={`flex h-full flex-col rounded-2xl border p-5 text-left transition hover:-translate-y-0.5 ${
+            onClick={(event) => {
+              triggerRef.current = event.currentTarget
+              setActive(project)
+            }}
+            className={`flex h-full flex-col rounded-2xl border p-5 text-left transition hover:-translate-y-0.5 focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500 ${
               isDark
                 ? 'border-white/10 bg-slate-950/50 hover:border-cyan-400/40'
                 : 'border-slate-200 bg-slate-50 hover:border-cyan-500/40'
@@ -71,21 +104,23 @@ export function Projects({ isDark }: ProjectsProps) {
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
-          aria-label={active.title}
+          aria-labelledby="modal-title"
           onClick={() => setActive(null)}
         >
-          <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm" />
+          <div role="presentation" className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm" />
           <div
+            ref={modalRef}
             onClick={(event) => event.stopPropagation()}
             className={`relative z-10 max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-2xl border p-6 shadow-2xl ${
               isDark ? 'border-white/10 bg-slate-900 text-slate-100' : 'border-slate-200 bg-white text-slate-900'
             }`}
           >
             <button
+              ref={closeButtonRef}
               type="button"
               onClick={() => setActive(null)}
               aria-label="Close"
-              className={`absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full text-lg transition ${
+              className={`absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full text-lg transition focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500 ${
                 isDark ? 'text-slate-400 hover:bg-white/10 hover:text-white' : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
@@ -98,7 +133,7 @@ export function Projects({ isDark }: ProjectsProps) {
             >
               {active.roleTag}
             </span>
-            <h3 className="mt-3 pr-8 text-xl font-semibold">{active.title}</h3>
+            <h3 id="modal-title" className="mt-3 pr-8 text-xl font-semibold">{active.title}</h3>
             <p className={`mt-3 text-sm ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>{active.summary}</p>
             <p className={`mt-4 text-sm ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
               <span className={`font-semibold ${isDark ? 'text-slate-100' : 'text-slate-900'}`}>Architecture:</span>{' '}
@@ -125,7 +160,7 @@ export function Projects({ isDark }: ProjectsProps) {
                 href={active.github}
                 target="_blank"
                 rel="noreferrer"
-                className={`inline-flex text-sm transition ${
+                className={`inline-flex text-sm transition focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500 ${
                   isDark ? 'text-cyan-200 hover:text-cyan-100' : 'text-cyan-700 hover:text-cyan-900'
                 }`}
               >
@@ -136,7 +171,7 @@ export function Projects({ isDark }: ProjectsProps) {
                   href={active.appStore}
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex text-sm transition ${
+                  className={`inline-flex text-sm transition focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500 ${
                     isDark ? 'text-cyan-200 hover:text-cyan-100' : 'text-cyan-700 hover:text-cyan-900'
                   }`}
                 >
