@@ -1,6 +1,7 @@
 export type NavItem = {
   id: string
   label: string
+  href?: string
 }
 
 export type ExperienceItem = {
@@ -52,7 +53,7 @@ export const navItems: NavItem[] = [
   { id: 'digital-resume', label: 'Digital Resume' },
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
-  { id: 'reading-list', label: 'Reading List' },
+  { id: 'reading-list', label: 'Reading List', href: '/reading-list/' },
   { id: 'contact', label: 'Contact' },
 ]
 

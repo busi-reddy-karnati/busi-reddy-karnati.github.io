@@ -4,4 +4,8 @@
     <loc>https://busireddykarnati.com/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://busireddykarnati.com/reading-list/</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -22,14 +22,14 @@ export function Navbar({ isDark, onToggleTheme }: NavbarProps) {
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
-          <a href="#home" className={`text-sm font-semibold tracking-wide ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>
+          <a href="/#home" className={`text-sm font-semibold tracking-wide ${isDark ? 'text-cyan-300' : 'text-cyan-700'}`}>
             {profile.name}
           </a>
           <nav aria-label="Primary" className="hidden gap-5 md:flex">
             {navItems.map((item) => (
               <a
                 key={item.id}
-                href={`#${item.id}`}
+                href={item.href ?? `/#${item.id}`}
                 className={`text-sm transition ${isDark ? 'text-slate-300 hover:text-cyan-300' : 'text-slate-700 hover:text-cyan-700'}`}
               >
                 {item.label}

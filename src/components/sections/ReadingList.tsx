@@ -28,7 +28,7 @@ export function ReadingList({ isDark }: ReadingListProps) {
         isDark ? 'border-white/10 bg-slate-900/70' : 'border-slate-200 bg-white'
       }`}
     >
-      <h2 className="section-title">Reading List: Reinforcement Learning in Simulation</h2>
+      <h1 className="section-title">Reading List: Reinforcement Learning in Simulation</h1>
       <p className="section-subtitle">
         One paper a week for 10 weeks, about {totalHours} hours in total. The list goes from how agents learn, to how
         simulators work, to how skills learned in simulation transfer to the real world.
