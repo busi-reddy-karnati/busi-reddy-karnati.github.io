@@ -4,6 +4,7 @@ import { DigitalResume } from './components/sections/DigitalResume'
 import { Experience } from './components/sections/Experience'
 import { Hero } from './components/sections/Hero'
 import { Projects } from './components/sections/Projects'
+import { ReadingList } from './components/sections/ReadingList'
 import { Skills } from './components/sections/Skills'
 import { Navbar } from './components/layout/Navbar'
 
@@ -19,6 +20,7 @@ function App() {
         <DigitalResume isDark={isDark} />
         <Projects isDark={isDark} />
         <Skills isDark={isDark} />
+        <ReadingList isDark={isDark} />
         <Contact isDark={isDark} />
       </main>
     </div>
