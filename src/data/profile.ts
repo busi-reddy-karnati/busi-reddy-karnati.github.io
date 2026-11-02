@@ -26,6 +26,17 @@ export type ProjectItem = {
   appStore?: string
 }
 
+export type ReadingItem = {
+  week: number
+  start: string
+  title: string
+  authors: string
+  link: string
+  learn: string
+  helps: string
+  hours: number
+}
+
 export const profile = {
   name: 'Busi Reddy Karnati',
   location: 'Sunnyvale, California',
@@ -41,6 +52,7 @@ export const navItems: NavItem[] = [
   { id: 'digital-resume', label: 'Digital Resume' },
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
+  { id: 'reading-list', label: 'Reading List' },
   { id: 'contact', label: 'Contact' },
 ]
 
@@ -230,5 +242,108 @@ export const skillGroups = [
   {
     title: 'Systems & Reliability',
     items: ['Distributed Systems', 'SLOs', 'Observability', 'Fault Tolerance'],
+  },
+]
+
+export const readingList: ReadingItem[] = [
+  {
+    week: 1,
+    start: '2026-11-02',
+    title: 'Human-level control through deep reinforcement learning (DQN)',
+    authors: 'Mnih et al., 2015',
+    link: 'https://www.nature.com/articles/nature14236',
+    learn: 'An agent can learn to play Atari games from raw pixels using only trial and error and the game score.',
+    helps: 'It shows the core loop that every simulation-trained agent uses: act, get a reward, improve.',
+    hours: 4,
+  },
+  {
+    week: 2,
+    start: '2026-11-09',
+    title: 'Proximal Policy Optimization Algorithms (PPO)',
+    authors: 'Schulman et al., 2017',
+    link: 'https://arxiv.org/abs/1707.06347',
+    learn: 'PPO is a simple, stable training method, and most simulation-trained robots and agents use it.',
+    helps: 'A stable method lets long training runs in a simulator finish without collapse.',
+    hours: 5,
+  },
+  {
+    week: 3,
+    start: '2026-11-16',
+    title: 'MuJoCo: A physics engine for model-based control',
+    authors: 'Todorov, Erez, and Tassa, 2012',
+    link: 'https://homes.cs.washington.edu/~todorov/papers/TodorovIROS12.pdf',
+    learn: 'How a physics simulator models contact, friction, and joints, and where it takes shortcuts.',
+    helps: 'If you know where a simulator is wrong, you know which learned skills will not transfer.',
+    hours: 4,
+  },
+  {
+    week: 4,
+    start: '2026-11-23',
+    title: 'Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World',
+    authors: 'Tobin et al., 2017',
+    link: 'https://arxiv.org/abs/1703.06907',
+    learn: 'Random colors, lights, and textures in the simulator make the real world look like one more variation.',
+    helps: 'It is the simplest tool to close the gap between simulation and reality.',
+    hours: 3,
+  },
+  {
+    week: 5,
+    start: '2026-11-30',
+    title: 'Sim-to-Real Transfer of Robotic Control with Dynamics Randomization',
+    authors: 'Peng et al., 2018',
+    link: 'https://arxiv.org/abs/1710.06537',
+    learn: 'Random physics (mass, friction, delay) gives a policy that survives real-world physics.',
+    helps: 'It extends randomization from how things look to how things move.',
+    hours: 4,
+  },
+  {
+    week: 6,
+    start: '2026-12-07',
+    title: 'Learning Agile and Dynamic Motor Skills for Legged Robots',
+    authors: 'Hwangbo et al., 2019',
+    link: 'https://arxiv.org/abs/1901.08652',
+    learn: 'A small neural network trained on real motor data can replace the least accurate part of a simulator.',
+    helps: 'It shows how to fix a simulator with real data, not only add more noise.',
+    hours: 5,
+  },
+  {
+    week: 7,
+    start: '2026-12-14',
+    title: "Solving Rubik's Cube with a Robot Hand",
+    authors: 'OpenAI, 2019',
+    link: 'https://arxiv.org/abs/1910.07113',
+    learn: 'A simulator can make its own randomization harder as the agent gets better.',
+    helps: 'An automatic curriculum removes hand-tuning and gives more robust real-world skills.',
+    hours: 7,
+  },
+  {
+    week: 8,
+    start: '2026-12-21',
+    title: 'Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning',
+    authors: 'Rudin et al., 2021',
+    link: 'https://arxiv.org/abs/2109.11978',
+    learn: 'Thousands of simulated robots on one GPU cut training time from days to minutes.',
+    helps: 'Fast training lets you test many simulator and reward designs in one day.',
+    hours: 4,
+  },
+  {
+    week: 9,
+    start: '2026-12-28',
+    title: 'Mastering Diverse Domains through World Models (DreamerV3)',
+    authors: 'Hafner et al., 2023',
+    link: 'https://arxiv.org/abs/2301.04104',
+    learn: 'An agent can learn its own model of the world and practice inside that learned "dream".',
+    helps: 'When no hand-built simulator exists, a learned one can take its place.',
+    hours: 7,
+  },
+  {
+    week: 10,
+    start: '2027-01-04',
+    title: 'Eureka: Human-Level Reward Design via Coding Large Language Models',
+    authors: 'Ma et al., 2023',
+    link: 'https://arxiv.org/abs/2310.12931',
+    learn: 'A large language model can write and improve reward functions for simulated tasks.',
+    helps: 'Reward design is often the slowest part of simulation training, and this automates it.',
+    hours: 4,
   },
 ]
